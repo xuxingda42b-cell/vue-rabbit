@@ -1,5 +1,22 @@
-$xtxColor: #27ba9b;
-$helpColor: #e26237;
-$sucColor: #1dc779;
-$warnColor: #ffb302;
-$priceColor: #cf4444;
+// StellarNook 品牌色系 - 星际宇宙主题
+$xtxColor: #7c5cfc;          // 主色：星际紫
+$stellarBlue: #4a9eff;       // 星蓝
+$stellarGold: #f5a623;       // 星金（hover/accent）
+$helpColor: #ff6b6b;         // 辅助红
+$sucColor: #2ecc71;          // 成功绿
+$warnColor: #f39c12;         // 警告橙
+$priceColor: #ff4757;        // 价格红
+
+// 深色背景系
+$navBg: #0d0d1a;             // 顶导背景
+$headerBg: #13132b;          // 主导栏背景
+$footerBg: #0a0a18;          // 页脚背景
+$cardBg: #1a1a35;            // 卡片背景
+
+// 文字色
+$textPrimary: #e8e8f5;       // 主文字
+$textSecondary: #8888aa;     // 次文字
+
+// 渐变色
+$gradientMain: linear-gradient(135deg, #7c5cfc 0%, #4a9eff 100%);
+$gradientGold: linear-gradient(135deg, #f5a623 0%, #ff6b6b 100%);

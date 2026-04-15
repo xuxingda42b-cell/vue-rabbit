@@ -1,16 +1,28 @@
 <script setup>
 import { useCartStore } from '@/stores/cartStore';
-const cartStore = useCartStore()
+import { useRouter } from 'vue-router';
+import { ElMessage } from 'element-plus';
 
-//单选回调
-const singleCheck = (i, selected)=>{
-  //除了selected补充一个用来筛选的参数 - skuId
-  cartStore.singleCheck(i.skuId,selected)
+const cartStore = useCartStore()
+const router = useRouter()
+
+// 单选回调
+const singleCheck = (i, selected) => {
+  cartStore.singleCheck(i.skuId, selected)
 }
 
-//全选回调
+// 全选回调
 const allCheck = (selected) => {
   cartStore.allCheck(selected)
+}
+
+// 结算前校验
+const toCheckout = () => {
+  if (cartStore.selectedCount === 0) {
+    ElMessage.warning('请先勾选要结算的商品')
+    return
+  }
+  router.push('/checkout')
 }
 </script>
 
@@ -87,7 +99,7 @@ const allCheck = (selected) => {
           <span class="red">¥ {{ cartStore.selectedPrice.toFixed(2) }} </span>
         </div>
         <div class="total">
-          <el-button size="large" type="primary" @click="$router.push('/checkout')">下单结算</el-button>
+          <el-button size="large" type="primary" @click="toCheckout">下单结算</el-button>
         </div>
       </div>
     </div>
@@ -99,10 +111,14 @@ const allCheck = (selected) => {
   margin-top: 20px;
 
   .cart {
-    background: #fff;
-    color: #666;
+    background: $cardBg;
+    border: 1px solid rgba(124, 92, 252, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    color: $textPrimary;
 
     table {
+      width: 100%;
       border-spacing: 0;
       border-collapse: collapse;
       line-height: 24px;
@@ -110,19 +126,21 @@ const allCheck = (selected) => {
       th,
       td {
         padding: 10px;
-        border-bottom: 1px solid #f5f5f5;
+        border-bottom: 1px solid rgba(124, 92, 252, 0.1);
 
         &:first-child {
           text-align: left;
           padding-left: 30px;
-          color: #999;
+          color: $textSecondary;
         }
       }
 
       th {
         font-size: 16px;
-        font-weight: normal;
+        font-weight: 500;
         line-height: 50px;
+        color: $textSecondary;
+        background: rgba(124, 92, 252, 0.06);
       }
     }
   }
@@ -130,10 +148,10 @@ const allCheck = (selected) => {
   .cart-none {
     text-align: center;
     padding: 120px 0;
-    background: #fff;
+    background: $cardBg;
 
     p {
-      color: #999;
+      color: $textSecondary;
       padding: 20px 0;
     }
   }
@@ -143,6 +161,8 @@ const allCheck = (selected) => {
 
     a {
       color: $xtxColor;
+      transition: color 0.2s;
+      &:hover { color: lighten(#7c5cfc, 15%); }
     }
 
     .xtx-numbox {
@@ -151,17 +171,9 @@ const allCheck = (selected) => {
     }
   }
 
-  .red {
-    color: $priceColor;
-  }
-
-  .green {
-    color: $xtxColor;
-  }
-
-  .f16 {
-    font-size: 16px;
-  }
+  .red { color: $priceColor; }
+  .green { color: $xtxColor; }
+  .f16 { font-size: 16px; }
 
   .goods {
     display: flex;
@@ -170,38 +182,37 @@ const allCheck = (selected) => {
     img {
       width: 100px;
       height: 100px;
+      border-radius: 6px;
     }
 
     >div {
       width: 280px;
       font-size: 16px;
       padding-left: 10px;
+      color: $textPrimary;
 
       .attr {
         font-size: 14px;
-        color: #999;
+        color: $textSecondary;
       }
     }
   }
 
   .action {
     display: flex;
-    background: #fff;
-    margin-top: 20px;
+    background: $cardBg;
+    border: 1px solid rgba(124, 92, 252, 0.15);
+    border-radius: 8px;
+    margin-top: 16px;
     height: 80px;
     align-items: center;
     font-size: 16px;
     justify-content: space-between;
     padding: 0 30px;
-
-    .xtx-checkbox {
-      color: #999;
-    }
+    color: $textPrimary;
 
     .batch {
-      a {
-        margin-left: 20px;
-      }
+      a { margin-left: 20px; }
     }
 
     .red {
@@ -212,11 +223,11 @@ const allCheck = (selected) => {
   }
 
   .tit {
-    color: #666;
+    color: $textSecondary;
     font-size: 16px;
     font-weight: normal;
     line-height: 50px;
   }
-
 }
 </style>
+

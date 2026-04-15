@@ -67,8 +67,9 @@ const payUrl = `${baseURL}pay/aliPay?orderId=${route.query.id}&redirect=${redire
 }
 
 .pay-info {
-
-  background: #fff;
+  background: $cardBg;
+  border: 1px solid rgba(124, 92, 252, 0.15);
+  border-radius: 8px;
   display: flex;
   align-items: center;
   height: 240px;
@@ -77,6 +78,7 @@ const payUrl = `${baseURL}pay/aliPay?orderId=${route.query.id}&redirect=${redire
   .icon {
     font-size: 80px;
     color: #1dc779;
+    filter: drop-shadow(0 0 12px rgba(29, 199, 121, 0.5));
   }
 
   .tip {
@@ -87,11 +89,17 @@ const payUrl = `${baseURL}pay/aliPay?orderId=${route.query.id}&redirect=${redire
       &:first-child {
         font-size: 20px;
         margin-bottom: 5px;
+        color: $textPrimary;
       }
 
       &:last-child {
-        color: #999;
+        color: $textSecondary;
         font-size: 16px;
+
+        span {
+          color: $priceColor;
+          font-weight: 600;
+        }
       }
     }
   }
@@ -100,12 +108,14 @@ const payUrl = `${baseURL}pay/aliPay?orderId=${route.query.id}&redirect=${redire
     span {
       &:first-child {
         font-size: 16px;
-        color: #999;
+        color: $textSecondary;
       }
 
       &:last-child {
         color: $priceColor;
-        font-size: 20px;
+        font-size: 24px;
+        font-weight: 700;
+        text-shadow: 0 0 10px rgba(255, 80, 80, 0.4);
       }
     }
   }
@@ -113,7 +123,9 @@ const payUrl = `${baseURL}pay/aliPay?orderId=${route.query.id}&redirect=${redire
 
 .pay-type {
   margin-top: 20px;
-  background-color: #fff;
+  background: $cardBg;
+  border: 1px solid rgba(124, 92, 252, 0.15);
+  border-radius: 8px;
   padding-bottom: 70px;
 
   p {
@@ -121,33 +133,45 @@ const payUrl = `${baseURL}pay/aliPay?orderId=${route.query.id}&redirect=${redire
     height: 70px;
     padding-left: 30px;
     font-size: 16px;
+    color: $textPrimary;
 
     &.head {
-      border-bottom: 1px solid #f5f5f5;
+      border-bottom: 1px solid rgba(124, 92, 252, 0.12);
+      background: $gradientMain;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 600;
     }
   }
 
   .btn {
     width: 150px;
     height: 50px;
-    border: 1px solid #e4e4e4;
+    border: 1px solid rgba(124, 92, 252, 0.2);
+    border-radius: 6px;
     text-align: center;
     line-height: 48px;
     margin-left: 30px;
-    color: #666666;
+    color: $textSecondary;
     display: inline-block;
+    transition: border-color 0.2s, background 0.2s, color 0.2s;
 
     &.active,
     &:hover {
       border-color: $xtxColor;
+      background: rgba(124, 92, 252, 0.08);
+      color: $xtxColor;
     }
 
     &.alipay {
       background: url(https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7b6b02396368c9314528c0bbd85a2e06.png) no-repeat center / contain;
+      filter: brightness(0.9);
     }
 
     &.wx {
       background: url(https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c66f98cff8649bd5ba722c2e8067c6ca.jpg) no-repeat center / contain;
+      filter: brightness(0.9);
     }
   }
 }

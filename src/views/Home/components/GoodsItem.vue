@@ -22,11 +22,15 @@
       width: 220px;
       padding: 20px 30px;
       text-align: center;
+      background: $cardBg;
+      border-radius: 8px;
+      border: 1px solid rgba(124, 92, 252, 0.1);
       transition: all .5s;
 
       &:hover {
         transform: translate3d(0, -3px, 0);
-        box-shadow: 0 3px 8px rgb(0 0 0 / 20%);
+        box-shadow: 0 4px 16px rgba(124, 92, 252, 0.2);
+        border-color: rgba(124, 92, 252, 0.4);
       }
 
       img {
@@ -40,10 +44,11 @@
 
       .name {
         font-size: 16px;
+        color: $textPrimary;
       }
 
       .desc {
-        color: #999;
+        color: $textSecondary;
         height: 29px;
       }
 

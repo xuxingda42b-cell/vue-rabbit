@@ -58,15 +58,20 @@ const {bannerList} = useBanner()
 .top-category {
   h3 {
     font-size: 28px;
-    color: #666;
-    font-weight: normal;
+    font-weight: 600;
     text-align: center;
     line-height: 100px;
+    background: $gradientMain;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .sub-list {
     margin-top: 20px;
-    background-color: #fff;
+    background: $cardBg;
+    border: 1px solid rgba(124, 92, 252, 0.15);
+    border-radius: 8px;
 
     ul {
       display: flex;
@@ -77,11 +82,11 @@ const {bannerList} = useBanner()
         width: 168px;
         height: 160px;
 
-
         a {
           text-align: center;
           display: block;
           font-size: 16px;
+          color: $textPrimary;
 
           img {
             width: 100px;
@@ -90,10 +95,12 @@ const {bannerList} = useBanner()
 
           p {
             line-height: 40px;
+            color: $textSecondary;
           }
 
           &:hover {
             color: $xtxColor;
+            p { color: $xtxColor; }
           }
         }
       }
@@ -101,9 +108,16 @@ const {bannerList} = useBanner()
   }
 
   .ref-goods {
-    background-color: #fff;
+    background: $cardBg;
+    border: 1px solid rgba(124, 92, 252, 0.15);
+    border-radius: 8px;
     margin-top: 20px;
     position: relative;
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: rgba(124, 92, 252, 0.35);
+    }
 
     .head {
       .xtx-more {
@@ -114,7 +128,7 @@ const {bannerList} = useBanner()
 
       .tag {
         text-align: center;
-        color: #999;
+        color: $textSecondary;
         font-size: 20px;
         position: relative;
         top: -20px;

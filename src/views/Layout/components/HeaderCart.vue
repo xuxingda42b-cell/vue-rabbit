@@ -88,9 +88,9 @@ const cartStore = useCartStore()
     position: absolute;
     top: 50px;
     right: 0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    background: #fff;
-    border-radius: 4px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(124, 92, 252, 0.2);
+    background: #1a1a35;
+    border-radius: 8px;
     padding-top: 10px;
 
     &::before {
@@ -100,9 +100,9 @@ const cartStore = useCartStore()
       top: -10px;
       width: 20px;
       height: 20px;
-      background: #fff;
+      background: #1a1a35;
       transform: scale(0.6, 1) rotate(45deg);
-      box-shadow: -3px -3px 5px rgba(0, 0, 0, 0.1);
+      box-shadow: -3px -3px 5px rgba(0, 0, 0, 0.3);
     }
 
     .foot {
@@ -114,12 +114,14 @@ const cartStore = useCartStore()
       padding: 10px;
       display: flex;
       justify-content: space-between;
-      background: #f8f8f8;
+      background: rgba(13, 13, 26, 0.8);
+      border-top: 1px solid rgba(124, 92, 252, 0.2);
+      border-radius: 0 0 8px 8px;
       align-items: center;
 
       .total {
         padding-left: 10px;
-        color: #999;
+        color: $textSecondary;
 
         p {
           &:last-child {
@@ -137,26 +139,26 @@ const cartStore = useCartStore()
     padding: 0 10px;
 
     &::-webkit-scrollbar {
-      width: 10px;
-      height: 10px;
+      width: 6px;
+      height: 6px;
     }
 
     &::-webkit-scrollbar-track {
-      background: #f8f8f8;
+      background: rgba(124, 92, 252, 0.05);
       border-radius: 2px;
     }
 
     &::-webkit-scrollbar-thumb {
-      background: #eee;
+      background: rgba(124, 92, 252, 0.3);
       border-radius: 10px;
     }
 
     &::-webkit-scrollbar-thumb:hover {
-      background: #ccc;
+      background: rgba(124, 92, 252, 0.6);
     }
 
     .item {
-      border-bottom: 1px solid #f5f5f5;
+      border-bottom: 1px solid rgba(124, 92, 252, 0.1);
       padding: 10px 0;
       position: relative;
 
@@ -165,7 +167,7 @@ const cartStore = useCartStore()
         bottom: 38px;
         right: 0;
         opacity: 0;
-        color: #666;
+        color: $textSecondary;
         transition: all 0.5s;
       }
 
@@ -183,6 +185,7 @@ const cartStore = useCartStore()
         img {
           height: 80px;
           width: 80px;
+          border-radius: 4px;
         }
 
         .center {
@@ -191,10 +194,11 @@ const cartStore = useCartStore()
 
           .name {
             font-size: 16px;
+            color: $textPrimary;
           }
 
           .attr {
-            color: #999;
+            color: $textSecondary;
             padding-top: 5px;
           }
         }
@@ -210,7 +214,7 @@ const cartStore = useCartStore()
           }
 
           .count {
-            color: #999;
+            color: $textSecondary;
             margin-top: 5px;
             font-size: 16px;
           }

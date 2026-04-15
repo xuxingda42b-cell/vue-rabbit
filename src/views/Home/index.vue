@@ -7,7 +7,7 @@ import homeProduct from './components/HomeProduct.vue'
 </script>
 
 <template>
-  <div class="container">
+  <div class="container banner-container">
     <HomeCategory />
     <HomeBanner />
   </div>
@@ -15,3 +15,9 @@ import homeProduct from './components/HomeProduct.vue'
   <HomeHot />
   <homeProduct />
 </template>
+
+<style scoped>
+.banner-container {
+  height: 500px;
+}
+</style>

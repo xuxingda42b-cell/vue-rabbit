@@ -32,7 +32,7 @@ defineProps({
 
 <style scoped lang='scss'>
 .home-panel {
-  background-color: #fff;
+  background-color: $headerBg;
 
   .head {
     padding: 40px 0;
@@ -42,15 +42,21 @@ defineProps({
     h3 {
       flex: 1;
       font-size: 32px;
-      font-weight: normal;
+      font-weight: 700;
       margin-left: 6px;
       height: 35px;
       line-height: 35px;
+      background: $gradientMain;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
 
       small {
         font-size: 16px;
-        color: #999;
+        color: $textSecondary;
         margin-left: 20px;
+        background: none;
+        -webkit-text-fill-color: $textSecondary;
       }
     }
   }

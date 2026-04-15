@@ -10,11 +10,11 @@ html {
 
 body {
   height: 100%;
-  color: #333;
+  color: $textPrimary;
   min-width: 1240px;
-  font: 1em/1.4 'Microsoft Yahei', 'PingFang SC', 'Avenir', 'Segoe UI',
-    'Hiragino Sans GB', 'STHeiti', 'Microsoft Sans Serif', 'WenQuanYi Micro Hei',
-    sans-serif;
+  font: 1em/1.4 'Inter', 'PingFang SC', 'Microsoft Yahei', 'Avenir', 'Segoe UI',
+    'Hiragino Sans GB', 'STHeiti', sans-serif;
+  background: #0d0d1a;
 }
 
 body,
@@ -31,8 +31,9 @@ dd {
 
 a {
   text-decoration: none;
-  color: #333;
+  color: $textPrimary;
   outline: none;
+  transition: color 0.2s;
 }
 
 i {
@@ -49,7 +50,7 @@ input[type='checkbox'] {
   -webkit-appearance: none;
 
   &::placeholder {
-    color: #ccc;
+    color: $textSecondary;
   }
 }
 
@@ -57,7 +58,7 @@ img {
   max-width: 100%;
   max-height: 100%;
   vertical-align: middle;
-  background: #ebebeb url('@/assets/images/200.png') no-repeat center / contain;
+  background: #1a1a35 url('@/assets/images/200.png') no-repeat center / contain;
 }
 
 ul {
@@ -65,7 +66,7 @@ ul {
 }
 
 #app {
-  background: #f5f5f5;
+  background: #0d0d1a;
   user-select: none;
 }
 

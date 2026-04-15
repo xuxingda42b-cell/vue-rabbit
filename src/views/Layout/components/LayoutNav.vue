@@ -4,10 +4,7 @@ import { useRouter } from 'vue-router';
 const userStore = useUserStore()
 const router = useRouter()
 const confirm = () => {
-  //退出登录业务逻辑实现
-  //1. 清除用户信息 触发action
   userStore.clearUserInfo()
-  //2. 跳转到登录页
   router.push('/login')
 }
 </script>
@@ -17,7 +14,12 @@ const confirm = () => {
     <div class="container">
       <ul>
         <template v-if="userStore.userInfo.token">
-          <li><a href="javascript:;"><i class="iconfont icon-user"></i>{{ userStore.userInfo.account }}</a></li>
+          <li>
+            <a href="javascript:;">
+              <i class="iconfont icon-user"></i>
+              {{ userStore.userInfo.account }}
+            </a>
+          </li>
           <li>
             <el-popconfirm @confirm="confirm" title="确认退出吗?" confirm-button-text="确认" cancel-button-text="取消">
               <template #reference>
@@ -41,22 +43,27 @@ const confirm = () => {
 
 <style scoped lang="scss">
 .app-topnav {
-  background: #333;
+  background: $navBg;
+  border-bottom: 1px solid rgba(124, 92, 252, 0.12);
+
   ul {
     display: flex;
-    height: 53px;
+    height: 40px;
     justify-content: flex-end;
     align-items: center;
+
     li {
       a {
-        padding: 0 15px;
-        color: #cdcdcd;
+        padding: 0 14px;
+        color: $textSecondary;
         line-height: 1;
         display: inline-block;
+        font-size: 13px;
+        transition: color 0.2s;
 
         i {
-          font-size: 14px;
-          margin-right: 2px;
+          font-size: 13px;
+          margin-right: 3px;
         }
 
         &:hover {
@@ -64,9 +71,9 @@ const confirm = () => {
         }
       }
 
-      ~li {
+      ~ li {
         a {
-          border-left: 2px solid #666;
+          border-left: 1px solid rgba(136, 136, 170, 0.25);
         }
       }
     }

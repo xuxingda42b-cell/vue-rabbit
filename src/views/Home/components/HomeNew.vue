@@ -49,17 +49,21 @@ onMounted(()=>getNewList())
     width: 306px;
     height: 406px;
 
-    background: #f0f9f4;
+    background: $cardBg;
+    border-radius: 8px;
+    border: 1px solid rgba(124, 92, 252, 0.1);
     transition: all .5s;
 
     &:hover {
       transform: translate3d(0, -3px, 0);
-      box-shadow: 0 3px 8px rgb(0 0 0 / 20%);
+      box-shadow: 0 4px 16px rgba(124, 92, 252, 0.2);
+      border-color: rgba(124, 92, 252, 0.3);
     }
 
     img {
       width: 306px;
       height: 306px;
+      border-radius: 8px 8px 0 0;
     }
 
     p {
@@ -69,6 +73,11 @@ onMounted(()=>getNewList())
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
+    }
+
+    .name {
+      color: $textPrimary;
+      font-size: 18px;
     }
 
     .price {

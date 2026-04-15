@@ -42,7 +42,9 @@ onMounted(()=>getOrderInfo())
 <style scoped lang="scss">
 .pay-result {
   padding: 100px 0;
-  background: #fff;
+  background: $cardBg;
+  border: 1px solid rgba(124, 92, 252, 0.15);
+  border-radius: 8px;
   text-align: center;
   margin-top: 20px;
 
@@ -52,23 +54,33 @@ onMounted(()=>getOrderInfo())
 
   .green {
     color: #1dc779;
+    filter: drop-shadow(0 0 16px rgba(29, 199, 121, 0.6));
   }
 
   .red {
     color: $priceColor;
+    filter: drop-shadow(0 0 16px rgba(255, 80, 80, 0.5));
   }
 
   .tit {
     font-size: 24px;
+    color: $textPrimary;
+    font-weight: 600;
   }
 
   .tip {
-    color: #999;
+    color: $textSecondary;
   }
 
   p {
     line-height: 40px;
     font-size: 16px;
+    color: $textPrimary;
+
+    span {
+      color: $priceColor;
+      font-weight: 600;
+    }
   }
 
   .btn {
@@ -77,8 +89,15 @@ onMounted(()=>getOrderInfo())
 
   .alert {
     font-size: 12px;
-    color: #999;
+    color: $textSecondary;
     margin-top: 50px;
+    padding: 0 40px;
+
+    .iconfont {
+      margin-right: 4px;
+      color: $xtxColor;
+    }
   }
 }
 </style>
+

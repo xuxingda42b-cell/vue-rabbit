@@ -95,7 +95,9 @@ watch([elementX, elementY,isOutside],()=>{
   .middle {
     width: 400px;
     height: 400px;
-    background: #f5f5f5;
+    background: $cardBg;
+    border-radius: 8px;
+    overflow: hidden;
   }
 
   .large {
@@ -105,11 +107,13 @@ watch([elementX, elementY,isOutside],()=>{
     width: 400px;
     height: 400px;
     z-index: 500;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     background-repeat: no-repeat;
     // 背景图:盒子的大小 = 2:1  将来控制背景图的移动来实现放大的效果查看 background-position
     background-size: 800px 800px;
-    background-color: #f8f8f8;
+    background-color: $cardBg;
+    border-radius: 8px;
+    border: 1px solid rgba(124, 92, 252, 0.2);
   }
 
   .layer {

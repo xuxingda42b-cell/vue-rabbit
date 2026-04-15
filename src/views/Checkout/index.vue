@@ -189,15 +189,22 @@ const createOrder = async()=>{
   margin-top: 20px;
 
   .wrapper {
-    background: #fff;
+    background: $cardBg;
+    border: 1px solid rgba(124, 92, 252, 0.15);
+    border-radius: 8px;
     padding: 0 20px;
 
     .box-title {
       font-size: 16px;
-      font-weight: normal;
+      font-weight: 600;
       padding-left: 10px;
       line-height: 70px;
-      border-bottom: 1px solid #f5f5f5;
+      border-bottom: 1px solid rgba(124, 92, 252, 0.12);
+      color: $textPrimary;
+      background: $gradientMain;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .box-body {
@@ -207,7 +214,8 @@ const createOrder = async()=>{
 }
 
 .address {
-  border: 1px solid #f5f5f5;
+  border: 1px solid rgba(124, 92, 252, 0.2);
+  border-radius: 6px;
   display: flex;
   align-items: center;
 
@@ -219,7 +227,7 @@ const createOrder = async()=>{
 
     .none {
       line-height: 90px;
-      color: #999;
+      color: $textSecondary;
       text-align: center;
       width: 100%;
     }
@@ -230,9 +238,10 @@ const createOrder = async()=>{
 
       li {
         line-height: 30px;
+        color: $textPrimary;
 
         span {
-          color: #999;
+          color: $textSecondary;
           margin-right: 5px;
 
           >i {
@@ -249,7 +258,7 @@ const createOrder = async()=>{
       text-align: center;
       height: 90px;
       line-height: 90px;
-      border-right: 1px solid #f5f5f5;
+      border-right: 1px solid rgba(124, 92, 252, 0.15);
     }
   }
 
@@ -263,9 +272,7 @@ const createOrder = async()=>{
       line-height: 44px;
       font-size: 14px;
 
-      &:first-child {
-        margin-right: 10px;
-      }
+      &:first-child { margin-right: 10px; }
     }
   }
 }
@@ -274,6 +281,7 @@ const createOrder = async()=>{
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
+  color: $textPrimary;
 
   .info {
     display: flex;
@@ -283,38 +291,32 @@ const createOrder = async()=>{
       width: 70px;
       height: 70px;
       margin-right: 20px;
+      border-radius: 4px;
     }
 
     .right {
       line-height: 24px;
 
       p {
-        &:last-child {
-          color: #999;
-        }
+        &:last-child { color: $textSecondary; }
       }
     }
   }
 
   tr {
     th {
-      background: #f5f5f5;
-      font-weight: normal;
+      background: rgba(124, 92, 252, 0.08);
+      font-weight: 500;
+      color: $textSecondary;
     }
 
-    td,
-    th {
+    td, th {
       text-align: center;
       padding: 20px;
-      border-bottom: 1px solid #f5f5f5;
+      border-bottom: 1px solid rgba(124, 92, 252, 0.1);
 
-      &:first-child {
-        border-left: 1px solid #f5f5f5;
-      }
-
-      &:last-child {
-        border-right: 1px solid #f5f5f5;
-      }
+      &:first-child { border-left: 1px solid rgba(124, 92, 252, 0.1); }
+      &:last-child  { border-right: 1px solid rgba(124, 92, 252, 0.1); }
     }
   }
 }
@@ -322,16 +324,20 @@ const createOrder = async()=>{
 .my-btn {
   width: 228px;
   height: 50px;
-  border: 1px solid #e4e4e4;
+  border: 1px solid rgba(124, 92, 252, 0.2);
   text-align: center;
   line-height: 48px;
   margin-right: 25px;
-  color: #666666;
+  color: $textSecondary;
   display: inline-block;
+  border-radius: 4px;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
 
   &.active,
   &:hover {
     border-color: $xtxColor;
+    color: $xtxColor;
+    background: rgba(124, 92, 252, 0.08);
   }
 }
 
@@ -340,6 +346,7 @@ const createOrder = async()=>{
     display: flex;
     justify-content: flex-end;
     line-height: 50px;
+    color: $textPrimary;
 
     dt {
       i {
@@ -364,7 +371,7 @@ const createOrder = async()=>{
 .submit {
   text-align: right;
   padding: 60px;
-  border-top: 1px solid #f5f5f5;
+  border-top: 1px solid rgba(124, 92, 252, 0.12);
 }
 
 .addressWrapper {
@@ -379,14 +386,17 @@ const createOrder = async()=>{
   align-items: center;
 
   &.item {
-    border: 1px solid #f5f5f5;
+    border: 1px solid rgba(124, 92, 252, 0.15);
+    border-radius: 6px;
     margin-bottom: 10px;
     cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    color: $textPrimary;
 
     &.active,
     &:hover {
       border-color: $xtxColor;
-      background: lighten($xtxColor, 50%);
+      background: rgba(124, 92, 252, 0.1);
     }
 
     >ul {
@@ -397,3 +407,4 @@ const createOrder = async()=>{
   }
 }
 </style>
+

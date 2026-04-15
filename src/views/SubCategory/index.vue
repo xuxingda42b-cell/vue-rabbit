@@ -79,12 +79,14 @@ const load = async()=>{
 <style lang="scss" scoped>
 .bread-container {
   padding: 25px 0;
-  color: #666;
+  color: $textSecondary;
 }
 
 .sub-container {
   padding: 20px 10px;
-  background-color: #fff;
+  background: $cardBg;
+  border: 1px solid rgba(124, 92, 252, 0.15);
+  border-radius: 8px;
 
   .body {
     display: flex;
@@ -110,10 +112,11 @@ const load = async()=>{
 
     .name {
       font-size: 16px;
+      color: $textPrimary;
     }
 
     .desc {
-      color: #999;
+      color: $textSecondary;
       height: 29px;
     }
 
@@ -128,7 +131,5 @@ const load = async()=>{
     display: flex;
     justify-content: center;
   }
-
-
 }
 </style>

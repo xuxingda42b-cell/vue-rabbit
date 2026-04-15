@@ -37,7 +37,7 @@ onMounted(()=>getGoods())
 
 <style scoped lang='scss'>
 .home-product {
-  background: #fff;
+  background: transparent;
   margin-top: 20px;
   .sub {
     margin-bottom: 2px;

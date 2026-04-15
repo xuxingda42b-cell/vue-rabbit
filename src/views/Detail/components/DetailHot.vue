@@ -65,7 +65,16 @@ onMounted(()=>getHotList())
     display: block;
     padding: 20px 30px;
     text-align: center;
-    background: #fff;
+    background: $cardBg;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(124, 92, 252, 0.1);
+    transition: all .3s;
+
+    &:hover {
+      border-color: rgba(124, 92, 252, 0.4);
+      box-shadow: 0 4px 16px rgba(124, 92, 252, 0.2);
+    }
 
     img {
       width: 160px;
@@ -78,10 +87,11 @@ onMounted(()=>getHotList())
 
     .name {
       font-size: 16px;
+      color: $textPrimary;
     }
 
     .desc {
-      color: #999;
+      color: $textSecondary;
       height: 29px;
     }
 

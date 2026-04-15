@@ -178,7 +178,8 @@ const addCart = ()=>{
 .xtx-goods-page {
   .goods-info {
     min-height: 600px;
-    background: #fff;
+    background: $cardBg;
+    border-radius: 8px;
     display: flex;
 
     .media {
@@ -210,12 +211,14 @@ const addCart = ()=>{
 
   .goods-tabs {
     min-height: 600px;
-    background: #fff;
+    background: $cardBg;
+    border-radius: 8px;
   }
 
   .goods-warn {
     min-height: 600px;
-    background: #fff;
+    background: $cardBg;
+    border-radius: 8px;
     margin-top: 20px;
   }
 
@@ -232,10 +235,11 @@ const addCart = ()=>{
 
   .g-name {
     font-size: 22px;
+    color: $textPrimary;
   }
 
   .g-desc {
-    color: #999;
+    color: $textSecondary;
     margin-top: 10px;
   }
 
@@ -255,7 +259,7 @@ const addCart = ()=>{
       }
 
       &:last-child {
-        color: #999;
+        color: $textSecondary;
         text-decoration: line-through;
         font-size: 16px;
       }
@@ -263,7 +267,9 @@ const addCart = ()=>{
   }
 
   .g-service {
-    background: #f5f5f5;
+    background: rgba(124, 92, 252, 0.05);
+    border: 1px solid rgba(124, 92, 252, 0.1);
+    border-radius: 8px;
     width: 500px;
     padding: 20px 10px 0 10px;
     margin-top: 10px;
@@ -275,11 +281,11 @@ const addCart = ()=>{
 
       dt {
         width: 50px;
-        color: #999;
+        color: $textSecondary;
       }
 
       dd {
-        color: #666;
+        color: $textPrimary;
 
         &:last-child {
           span {
@@ -316,13 +322,13 @@ const addCart = ()=>{
         top: 10px;
         left: 0;
         height: 60px;
-        border-left: 1px solid #e4e4e4;
+        border-left: 1px solid rgba(232, 232, 245, 0.1);
         content: "";
       }
 
       p {
         &:first-child {
-          color: #999;
+          color: $textSecondary;
         }
 
         &:nth-child(2) {
@@ -331,7 +337,7 @@ const addCart = ()=>{
         }
 
         &:last-child {
-          color: #666;
+          color: $textPrimary;
           margin-top: 10px;
 
           i {
@@ -352,18 +358,20 @@ const addCart = ()=>{
 
 .goods-tabs {
   min-height: 600px;
-  background: #fff;
+  background: $cardBg;
+  border-radius: 8px;
 
   nav {
     height: 70px;
     line-height: 70px;
     display: flex;
-    border-bottom: 1px solid #f5f5f5;
+    border-bottom: 1px solid rgba(124, 92, 252, 0.2);
 
     a {
       padding: 0 40px;
       font-size: 18px;
       position: relative;
+      color: $textPrimary;
 
       >span {
         color: $priceColor;
@@ -389,12 +397,12 @@ const addCart = ()=>{
 
       .dt {
         width: 100px;
-        color: #999;
+        color: $textSecondary;
       }
 
       .dd {
         flex: 1;
-        color: #666;
+        color: $textPrimary;
       }
     }
   }

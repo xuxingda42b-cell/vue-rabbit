@@ -38,18 +38,44 @@ const categoryStore = useCategoryStore()
 .home-category {
   width: 250px;
   height: 500px;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(13, 13, 26, 0.92);
+  border-right: 1px solid rgba(124, 92, 252, 0.25);
   position: relative;
   z-index: 99;
 
   .menu {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
     li {
-      padding-left: 40px;
-      height: 55px;
-      line-height: 55px;
+      flex: 1;
+      padding-left: 16px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid rgba(124, 92, 252, 0.1);
+      position: relative;
+      transition: background 0.2s;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 20%;
+        height: 60%;
+        width: 3px;
+        background: $xtxColor;
+        border-radius: 0 2px 2px 0;
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
 
       &:hover {
-        background: $xtxColor;
+        background: linear-gradient(90deg, rgba(124, 92, 252, 0.25) 0%, rgba(124, 92, 252, 0.05) 100%);
+
+        &::before {
+          opacity: 1;
+        }
       }
 
       a {
@@ -57,14 +83,24 @@ const categoryStore = useCategoryStore()
         color: #fff;
 
         &:first-child {
-          font-size: 16px;
+          font-size: 15px;
+          font-weight: 600;
+          color: $textPrimary;
+        }
+
+        &:not(:first-child) {
+          font-size: 12px;
+          color: $textSecondary;
         }
       }
 
       .layer {
         width: 990px;
         height: 500px;
-        background: rgba(255, 255, 255, 0.8);
+        background: rgba(13, 13, 26, 0.95);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(124, 92, 252, 0.2);
+        box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
         position: absolute;
         left: 250px;
         top: 0;
@@ -75,10 +111,11 @@ const categoryStore = useCategoryStore()
           font-size: 20px;
           font-weight: normal;
           line-height: 80px;
+          color: $textPrimary;
 
           small {
             font-size: 16px;
-            color: #666;
+            color: $textSecondary;
           }
         }
 
@@ -91,9 +128,10 @@ const categoryStore = useCategoryStore()
             height: 120px;
             margin-right: 15px;
             margin-bottom: 15px;
-            border: 1px solid #eee;
+            border: 1px solid rgba(124, 92, 252, 0.15);
             border-radius: 4px;
-            background: #fff;
+            background: $cardBg;
+            transition: border-color 0.2s, background 0.2s;
 
             &:nth-child(3n) {
               margin-right: 0;
@@ -107,12 +145,14 @@ const categoryStore = useCategoryStore()
               padding: 10px;
 
               &:hover {
-                background: #e3f9f4;
+                background: rgba(124, 92, 252, 0.1);
+                border-color: rgba(124, 92, 252, 0.4);
               }
 
               img {
                 width: 95px;
                 height: 95px;
+                border-radius: 4px;
               }
 
               .info {
@@ -122,11 +162,11 @@ const categoryStore = useCategoryStore()
 
                 .name {
                   font-size: 16px;
-                  color: #666;
+                  color: $textPrimary;
                 }
 
                 .desc {
-                  color: #999;
+                  color: $textSecondary;
                 }
 
                 .price {
